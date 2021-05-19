@@ -2,22 +2,30 @@ package com.bridgelabz.greetingapp.model;
 
 public class Greeting 
 {
-	private String message;
-	private long gId;
+	private String greeting;
+	private long id;
 	
-	public Greeting(long gId, String message) 
+	public Greeting(long id, String greeting) 
 	{
-		this.gId = gId;
-		this.message = message;
+		this.id = id;
+		this.greeting = greeting;
 	}
 	
-	public long getgId() 
+	public long getId() 
 	{
-		return gId;
+		return id;
+	}
+	public void setId(long id)
+	{
+		this.id = id;
 	}
 	
-	public String getMessage() 
+	public String getGreeting() 
 	{
-		return message;
+		return greeting;
+	}
+	public void setGreeting(String greeting)
+	{
+		this.greeting = greeting;
 	}
 }
