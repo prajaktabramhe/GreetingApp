@@ -39,9 +39,5 @@ public class GreetingService implements IGreetingService
 		return greetingRepository.findAll();
 	}
 
-	
-
-	
-
-	
+		
 }
