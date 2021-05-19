@@ -12,7 +12,7 @@ import com.bridgelabz.greetingapp.model.User;
 import com.bridgelabz.greetingapp.servicce.IGreetingService;
 
 @RestController
-@RequestMapping("/greeting")
+@RequestMapping("")
 public class GreetingController 
 {
 	
