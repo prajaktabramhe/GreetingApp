@@ -39,5 +39,10 @@ public class GreetingService implements IGreetingService
 		return greetingRepository.findAll();
 	}
 
-		
+	@Override
+	public Optional<Greeting> editGreetingById(long id, String name) {
+		Optional<Greeting> particularGreeting = greetingRepository.findById(id);
+		particularGreeting.get().setMessage(name);
+		return particularGreeting;
+	}
 }
