@@ -45,4 +45,10 @@ public class GreetingService implements IGreetingService
 		particularGreeting.get().setMessage(name);
 		return particularGreeting;
 	}
+
+	@Override
+	public void delete(long id) {
+		greetingRepository.deleteById(id);
+	}
+	
 }

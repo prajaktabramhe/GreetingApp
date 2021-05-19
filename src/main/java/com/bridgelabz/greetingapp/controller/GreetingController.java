@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +25,7 @@ import com.bridgelabz.greetingapp.servicce.IGreetingService;
 public class GreetingController 
 {
 	private static final String template = "Hello, %s!";
-	private final AtomicLong counter = new AtomicLong();
+	//private final AtomicLong counter = new AtomicLong();
 	
     @Autowired
 	private IGreetingService iGreetingService;
@@ -56,5 +57,10 @@ public class GreetingController
 	@PutMapping("/editGreeting/{id}")
 	public Optional<Greeting> editGreetingById(@PathVariable("id") long id, @RequestParam(value = "name") String name) {
 		return iGreetingService.editGreetingById(id, name);
+	}
+	
+	@DeleteMapping("/delete")
+	public void deleteByID(@RequestParam(name = "id") long id) {
+		iGreetingService.delete(id);
 	}
 }
